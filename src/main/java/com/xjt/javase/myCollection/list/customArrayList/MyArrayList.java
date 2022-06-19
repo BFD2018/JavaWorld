@@ -1,4 +1,4 @@
-package com.xjt.javase.collections.list.customArrayList;
+package com.xjt.javase.myCollection.list.customArrayList;
 
 import java.util.Arrays;
 import java.util.Collection;

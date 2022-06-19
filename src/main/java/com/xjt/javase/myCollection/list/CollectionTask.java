@@ -1,4 +1,4 @@
-package com.xjt.javase.ArrayList;
+package com.xjt.javase.myCollection.list;
 
 import cn.hutool.core.util.RandomUtil;
 

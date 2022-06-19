@@ -1,13 +1,15 @@
-package com.xjt.javase.collections.list;
+package com.xjt.javase.myCollection.list;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class MyDemoTest {
+    @Test
+    public void testCollection(){
+
+    }
+
     //Cloneable 标记性接口
     @Test
     public void testClone(){

@@ -1,4 +1,4 @@
-package com.xjt.javase.ArrayList;
+package com.xjt.javase.myCollection.list;
 
 public class TestConcurrentTask1 {
     public static void main(String[] args) {
