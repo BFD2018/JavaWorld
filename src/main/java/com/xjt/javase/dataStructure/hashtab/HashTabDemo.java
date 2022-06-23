@@ -42,8 +42,6 @@ public class HashTabDemo {
             }
         }
     }
-
-
 }
 //创建HashTab 管理多条链表
 class HashTab{
@@ -85,13 +83,14 @@ class HashTab{
         }
         return emp;
     }
+
     //编写散列函数, 使用一个简单取模法
     public int hashFunc(int id){
         return id % size;
     }
 }
 
-//雇员-一个链表的节点信息
+//雇员-一个链表的节点信息(员工类)
 class Emp{
     private int id;
     private String name;

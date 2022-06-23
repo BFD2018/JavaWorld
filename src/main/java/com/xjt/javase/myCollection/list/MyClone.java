@@ -1,9 +1,9 @@
 package com.xjt.javase.myCollection.list;
 
-import com.xjt.javase.collections.list.domain.Dog;
-import com.xjt.javase.collections.list.domain.Job;
+import com.xjt.javase.myCollection.list.domain.Dog;
+import com.xjt.javase.myCollection.list.domain.Job;
 import com.xjt.javase.myCollection.list.domain.Skill;
-import com.xjt.javase.collections.list.domain.Student;
+import com.xjt.javase.myCollection.list.domain.Student;
 import org.apache.commons.lang3.SerializationUtils;
 import org.junit.Test;
 
