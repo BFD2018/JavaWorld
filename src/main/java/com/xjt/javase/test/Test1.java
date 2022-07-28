@@ -1,4 +1,4 @@
-package com.xjt.javase.base;
+package com.xjt.javase.test;
 
 import org.junit.Test;
 

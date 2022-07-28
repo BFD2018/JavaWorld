@@ -1,4 +1,4 @@
-package com.xjt.javase.innerClass;
+package com.xjt.javase.oop.innerClass;
 
 class Outer {
     private int out_a = 1;

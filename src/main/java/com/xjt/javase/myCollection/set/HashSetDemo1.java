@@ -1,16 +1,10 @@
-package com.xjt.javase.HashSet;
+package com.xjt.javase.myCollection.set;
 
-import cn.hutool.core.util.ArrayUtil;
 import org.junit.Test;
 
-import java.math.BigDecimal;
-import java.nio.charset.IllegalCharsetNameException;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 
-public class Demo1 {
+public class HashSetDemo1 {
     @Test
     public void testAdd() {
         HashSet<String> set = new HashSet<>();
