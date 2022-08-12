@@ -6,4 +6,4 @@
 
 https://leetcode.cn/problems/intersection-of-two-linked-lists/
 
-![image-20220804232158642](D:/CodeLearning/JavaLearning/JavaProjects/JavaWorld-master/src/main/java/com/xjt/javase/leetcode/typora-assets/image-20220804232158642.png)
+![image-20220804232158642](typora-assets/image-20220804232158642.png)
