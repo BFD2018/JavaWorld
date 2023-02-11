@@ -14,10 +14,14 @@ public class MyDemo01 implements Cloneable {
         strings.add("wang");
         strings.add("zhang");
 
-        System.out.println(strings);
-        strings.clear();
-
-
+//        System.out.println(strings);
+//        strings.clear();
+//        System.out.println(strings);
+        for (int i = 0; i < strings.size(); i++) {
+            if(strings.get(i) == "wang"){
+                strings.set(i,"wang001");
+            }
+        }
         System.out.println(strings);
     }
 

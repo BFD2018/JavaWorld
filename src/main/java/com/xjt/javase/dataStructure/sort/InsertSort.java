@@ -7,9 +7,6 @@ public class InsertSort {
         int arr[] = {1,3,2,8,7,4,6,5};
 
         InsertSortFunc(arr);
-
-
-
     }
 
     public static void InsertSortFunc(int[] arr){

@@ -43,9 +43,13 @@ public class Test01 {
 
             //2.3 有参构造
             Constructor<? extends Person> constructor1 = p1Class.getConstructor(Integer.class);
-            Constructor<? extends Person> constructor2 = p1Class.getConstructor(String.class);
+            Constructor<? extends Person> constructor2 = p1Class.getDeclaredConstructor(String.class);
             System.out.println(constructor1);
             System.out.println(constructor2);
+            // String类型的构造方法是private类型 因此要暴力反射
+            constructor2.setAccessible(true);
+            Person zhangsan = constructor2.newInstance("zhangsan");
+            System.out.println(zhangsan);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -74,8 +78,6 @@ public class Test01 {
                 age.setAccessible(true);        //暴力反射  获得所有字段
                 Object o = age.get(person);
                 System.out.println(o);
-
-
             } catch (InstantiationException e) {
                 e.printStackTrace();
             } catch (IllegalAccessException e) {

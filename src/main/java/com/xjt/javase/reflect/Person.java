@@ -5,8 +5,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
+@AllArgsConstructor         //全参构造
+@NoArgsConstructor      //无参构造
 public class Person {
     private String name;
     private Integer age;
