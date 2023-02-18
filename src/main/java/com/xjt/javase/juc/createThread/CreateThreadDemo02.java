@@ -1,4 +1,4 @@
-package com.xjt.javase.juc;
+package com.xjt.javase.juc.createThread;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -10,7 +10,7 @@ import java.util.concurrent.locks.LockSupport;
 import static com.xjt.javase.juc.utils.MySleeper.sleep;
 
 @Slf4j(topic = "c.Sync")
-public class CreateThread {
+public class CreateThreadDemo02 {
     private static int R = 0;
 
     public static void main(String[] args) throws InterruptedException {

@@ -3,6 +3,7 @@ package com.xjt.javase.myCollection.set;
 import org.junit.Test;
 
 import java.util.HashSet;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 public class HashSetDemo1 {
     @Test
@@ -12,6 +13,23 @@ public class HashSetDemo1 {
         set.add("zhang");
         set.add("wang");
         set.add("xiong");
+
+        set.forEach(item ->{
+            System.out.println(item);
+        });
+    }
+
+    @Test
+    public void testCopyOnWriteArraySet() {
+        CopyOnWriteArraySet<Object> arraySet = new CopyOnWriteArraySet<>();
+        arraySet.add("xiong");
+        arraySet.add("zhang");
+        arraySet.add("wang");
+        arraySet.add("xiong");
+
+        arraySet.forEach(item ->{
+            System.out.println(item);
+        });
     }
 
     @Test

@@ -1,4 +1,4 @@
-package com.xjt.javase.bytes;
+package com.xjt.javase.my_dataType.bytes;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
