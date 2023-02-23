@@ -1,4 +1,4 @@
-package com.xjt.javase.juc.atguigu2022.lock;
+package com.xjt.javase.juc.locks.lock;
 
 
 import java.util.concurrent.locks.ReentrantLock;

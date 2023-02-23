@@ -1,4 +1,4 @@
-package com.xjt.javase.juc.atguigu2022.LockSupport;
+package com.xjt.javase.juc.locksupport;
 
 import java.util.concurrent.TimeUnit;
 
