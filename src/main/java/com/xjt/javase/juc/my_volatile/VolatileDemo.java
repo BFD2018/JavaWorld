@@ -1,15 +1,18 @@
 package com.xjt.javase.juc.my_volatile;
 
+import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class VolatileDemo {
     public static void main(String[] args) {
-        /* System.out.println(Thread.activeCount());*/
+        System.out.println(Thread.activeCount());
+        System.out.println(Thread.currentThread().getName());
+
         AutoResource autoResource=new AutoResource();
         //20个线程每个线程循环100次
         for (int i = 1; i <=20; i++) {
             new Thread(()->{
-                for (int j = 1; j <=100; j++) {
+                for (int j = 1; j <=1000; j++) {
                     autoResource.numberPlusPlus();
                     autoResource.addAtomicInteger();
                 }
