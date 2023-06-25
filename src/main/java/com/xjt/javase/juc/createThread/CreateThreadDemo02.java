@@ -3,8 +3,7 @@ package com.xjt.javase.juc.createThread;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.*;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.FutureTask;
+import java.util.concurrent.*;
 import java.util.concurrent.locks.LockSupport;
 
 import static com.xjt.javase.juc.utils.MySleeper.sleep;
@@ -14,54 +13,16 @@ public class CreateThreadDemo02 {
     private static int R = 0;
 
     public static void main(String[] args) throws InterruptedException {
-        /*Thread t1 = new Thread() {
-            public void run() {
-                System.out.println("hello thread");
-            }
-        };
+        //m_extendThread();
 
-        t1.start();
-        System.out.println(t1.getName());
-        System.out.println("当前主线程是："+ Thread.currentThread().getName());*/
+        //m_runnable();
 
-        /*Thread t1 = new Thread(() -> {
-            log.debug("开始");
-            sleep(1);
-            log.debug("结束");
-            R = 10;
-        },"t1");
-        t1.start();
+        //m_futureTask();
 
-        t1.join();
-        log.debug(Thread.currentThread().getName());*/
+        //m_threadpool();
 
 
-        /*Runnable runnable = new Runnable() {
-            @Override
-            public void run(){
-                // 要执行的任务
-                System.out.println("第二种方式创建线程：Runnable接口");
-            }
-        };
-        // 创建线程对象
-        Thread t = new Thread( runnable );
-        // 启动线程
-        t.start();*/
-
-        /*FutureTask futureTask = new FutureTask<Integer>(() ->{
-            System.out.println("执行线程任务");
-            return 100;
-        });
-        try {
-            Thread t3 = new Thread(futureTask, "t3");
-            t3.start();
-
-            Object o = futureTask.get();
-            System.out.println(o);
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }*/
-
+        //m_join();
 
         //test01();
 
@@ -73,7 +34,79 @@ public class CreateThreadDemo02 {
 
 //        testDaemon();
 
-        testSellTicket();
+        //testSellTicket();
+    }
+
+    public static void m_join() throws InterruptedException {
+        Thread t1 = new Thread(() -> {
+            log.debug("开始");
+            sleep(1);
+            log.debug("结束");
+            R = 10;
+        },"t1");
+        t1.start();
+
+        t1.join();      //阻塞 等待t1完成
+        log.debug(Thread.currentThread().getName());
+    }
+
+    public static void m_threadpool() {
+        ExecutorService threadPool = Executors.newFixedThreadPool(3);
+        for (int i = 0; i < 10; i++) {
+            int temp = i;
+            threadPool.submit(() ->{
+                System.out.println(Thread.currentThread().getName() + "\t i==" + temp);
+                try {
+                    TimeUnit.MILLISECONDS.sleep(100);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+
+        threadPool.shutdown();
+    }
+
+    public static void m_extendThread() {
+        Thread t1 = new Thread() {
+            public void run() {
+                System.out.println("hello thread");
+            }
+        };
+
+        t1.start();
+        System.out.println(t1.getName());
+        System.out.println("当前主线程是："+ Thread.currentThread().getName());
+    }
+
+    public static void m_runnable() {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run(){
+                // 要执行的任务
+                System.out.println("第二种方式创建线程：Runnable接口");
+            }
+        };
+        // 创建线程对象
+        Thread t = new Thread( runnable );
+        // 启动线程
+        t.start();
+    }
+
+    public static void m_futureTask() throws InterruptedException {
+        FutureTask futureTask = new FutureTask<Integer>(() ->{
+            System.out.println("执行线程任务");
+            return 100;
+        });
+        try {
+            Thread t3 = new Thread(futureTask, "t3");
+            t3.start();
+
+            Object o = futureTask.get();
+            System.out.println(o);
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
     }
 
     public static void test01() {
