@@ -1,4 +1,4 @@
-package com.xjt.javase.commons.commons_lang;
+package com.xjt.javase.apache_commons.commons_lang;
 
 
 import org.apache.commons.lang.ArrayUtils;
